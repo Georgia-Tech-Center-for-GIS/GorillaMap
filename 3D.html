@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyCw5lbOSElOqXCALHbMg9P9fqUzJrnP7WY&sensor=false"> </script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script src="earth.js"></script>
+<style>
+body {
+  width:99%; 
+  height:770px;
+  background-image:url(http://rafrogblogus.files.wordpress.com/2013/05/gorilla.jpg
+)
+}
+</style>
+    <script type="text/javascript">
+      function addSampleButton(caption, clickHandler) {
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.value = caption;
+        
+        if (btn.attachEvent)
+          btn.attachEvent('onclick', clickHandler);
+        else
+          btn.addEventListener('click', clickHandler, false);
+
+        // add the button to the Sample UI
+        document.getElementById('sample-ui').appendChild(btn);
+      }
+      
+      function addSampleUIHtml(html) {
+        document.getElementById('sample-ui').innerHTML += html;
+		
+      }
+    </script>
+<script>
+  $(function() {
+$( "#tabs" ).tabs({
+      collapsible: true, active: 1
+    });
+	
+$('#tabs-1').click(function() {
+$('#tabs').tabs({active: 0});
+});	
+
+$('#tabs-2').click(function() {
+
+});	
+
+});
+ </script>
+</head>
+<body>
+
+<div style="width:1200px;height:770px; margin-left:auto; margin-right:auto;">
+<div id="search-contain" style="background-color:black;position:absolute;width:200px;height:770px;">
+<div id="search-content" style="position:absolute;width:200px;height:470px;margin-top: 170px;margin-left: 5px;color: white;">
+<div style="width: 173px;float:left;height:210px;text-align: center;margin-left: 5px;border: gray;
+border-style: solid;
+border-width: 2px;margin-top:15px">
+<label style="margin-left: 0px;">Gorilla Type</label>
+	<select id="district" size="11" style="text-align: center;width:173px">		
+  	    <option value="">Ready</option>
+		<option value="BEE" >BEE</option>
+		<option value="BWE">BWE</option>
+		<option value="INS">INS</option>
+		<option value="ISA">ISA</option>
+		<option value="KUY">KUY</option>
+		<option value="NTA">NTA</option>
+		<option value="PAB">PAB</option>
+		<option value="SHI">SHI</option>
+		<option value="TIT">TIT</option>
+		<option value="UGE">UGE</option>
+		<option value="URU">URU</option>
+	</select>
+</div>
+
+<input type="button" value="Clear points" onclick="reset()" style="margin-left: 50px;
+margin-top: 10px;"/>
+
+<div id="sample-ui"></div>
+
+</div>
+</div>
+<label id="gorilla-tag" style="color:#FFFFFF;position:absolute;font: 50px 'Century Gothic', Sans-Serif;margin-left: 20px;margin-top: 100px;">Gorilla</label>
+<div id="tabs" style="position:absolute;font:16px 'Century Gothic', Sans-Serif;margin-left: 260px; margin-top: 117px;">
+  <ul>
+    <li onclick="window.open('Map.html','_self')"><a href="#tabs-1">Map</a></li>
+    <li ><a href="#tabs-2">3D World</a></li>
+  </ul>
+  
+<div id="tabs-1" style="font:16px 'Century Gothic', Sans-Serif"></div>
+<div id="tabs-2" style="font:16px 'Century Gothic', Sans-Serif"></div>	
+</div>
+<label id="gatech-tag" style="color:#D6CE03;position:absolute;font: 100px 'Century Gothic', Sans-Serif;margin-left: 570px;margin-top: 38px; width: 670px">Georgia Tech</label>
+<div id ="kk" style="position:absolute; width:1200px;height:1px;margin-top:160px">
+<div id="search-contain-line" style="float:left; background-color:gray; width:175px;height:1px; margin-left:10px"></div>
+<div id="search-contain-line-right" style="float:left; background-color:gray; width:970px;height:1px;margin-left:255px"></div>
+</div>
+<div id="map-contain2" style="background-color:black;position:absolute; width:970px;height:604px;margin-left:255px;margin-top:165px">
+<div id="map_canvas" style="border: 1px solid black; width:553px; height:180px; position:absolute"></div>
+<div id="map3d" style="height: 605px; width: 970px;position:absolute"></div>
+<div id="chart_div" style="width:970px; height:200px;top:405px;position: absolute" onmouseout=""></div>
+</div>
+
+</div>
+</html>
